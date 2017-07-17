@@ -27,7 +27,7 @@ var program = function(){
 			}
 		}
 		api.encrypt(that.pgp_key,inf,function(data){
-			that.image_container.setMessage(data);
+			that.image_container.setMessage(data.encryptmessage+data.decryptmessage);
 			that.image_container.setLoading(false);
 		},function(err){
 			toast.message(err);
